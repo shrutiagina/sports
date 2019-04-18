@@ -1,0 +1,15 @@
+ .bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0); /* Black w/opacity/see-through */
+  color: black;
+  font-weight: bold;
+  border: 0 solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 68%;
+  transform: translate(-50%, -38%);
+  z-index: 2;
+  width: 55%;
+  
+  text-align:left;
+}

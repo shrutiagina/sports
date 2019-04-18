@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        .bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.5); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 0 solid #f1f1f1;
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  padding: 20px;
+  text-align:center;
+}
+fieldset{
+    margin-left:300px;
+    margin-right:300px;
+}
+html,body{
+    overflow-x:hidden;
+     overflow-y:hidden;
+   
+}
+
+.button:hover {
+    background-color:#088A85  ; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius:50px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+      
+      </style>
+    
+    
+    </head>
+    <body>
+        <center><h4 style="font-size:35px;color:#088A85;font-family:Californian FB">BASKETBALL REGISTER PAGE !!</h4></center>
+   <div style="margin-left:40px;margin-right:140px;"> <img style="margin-left:40px;margin-right:140px;" src="coll17.jpg"  width="100%"></div>
+   <div class="bg-text">
+      
+       <form method="POST" action="BasketBall.jsp">
+       <fieldset>
+           <legend style="color:white;">REGISTRATION FORM</legend>
+           <br><br><br>
+           USER CATEGORY : &nbsp;&nbsp;
+                <select name="usercategory"  required>
+                    <option>- SELECT -</option>
+                    <option value="Student" name="student" id="student">STUDENT</option>
+                    <option value="Association" name="asso" id="asso" >ASSOCIATION</option>
+                    <option value="Individual" >INDIVIDUAL</option></select><br><br><br>
+           NAME :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name" required ><br><br><br>
+           
+           AGE GROUP :&nbsp;&nbsp; <select name="age" id="age" required>
+               <option>- SELECT -</option>
+               <option value="8-18">8-18</option>
+               <option value="19-28">19-28</option>
+               <option value="29-38">29-38</option>
+               <option value="Not an individual" >Not an individual</option></select><br><br><br>
+           GENDER :&nbsp;&nbsp;&nbsp;
+           <input type="radio" name="gender" value="male" id="gender1" required>MALE&nbsp;&nbsp;
+           <input type="radio" name="gender" value="female" id="gender2" required>FEMALE&nbsp;&nbsp;<br>
+          &nbsp;&nbsp; 
+            <input type="radio" name="gender" id="gender3" value="others" required>OTHERS&nbsp;&nbsp;
+          <br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+          <input type="radio" name="gender" id="gender4" value="notanindividual" required>NOT AN INDIVIDUAL&nbsp;&nbsp<br><br><br>
+                
+               
+             
+            EMAIL ID&nbsp;&nbsp; : &nbsp;&nbsp;<input type="email" name="mail" required><br><br><br>
+             SR_PASSWORD&nbsp;&nbsp; : &nbsp;&nbsp;<input type="password" name="pass" required><br><br><br>
+             ADDRESS&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;<input type="text" name="address" required ><br><br><br>
+            
+             CONTACT NO&nbsp;&nbsp; : &nbsp;&nbsp; <input type="number" name="contact" required><br><br><br>
+             
+         
+           <input type="submit" class="button" style="background-color:#088A85;font-size:20px;color:white;" name="submit" value="submit">
+      
+               <br><br>
+           </fieldset>
+       </form><br>
+   
+       
+       <br><br><br>
+       </div>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <style>
+          body{
+                height:100%;
+            }
+            .bg{
+                background-color:#adebeb;
+                
+            }
+            .container{
+	position:absolute;
+	width: auto;
+	height:auto;
+	top: calc(50% - 300px);
+	left: calc(50% - 200px);
+}
+
+form {
+	position: absolute;
+	text-align: center;
+	background: #fff;
+	width: 550px;
+	height: 720px;
+	border-radius: 5px;
+	padding: 30px 20px 0 20px;
+	box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
+}
+
+            
+input {
+	border: none;
+	border-bottom: 1px solid #2db9b9 ;
+	width: 90%;
+	font-family: 'Roboto';
+	color: #2db9b9 ;
+	text-align: center;
+	font-size: 21px;
+	font-weight:100;
+	margin-bottom:25px;
+}
+
+::-webkit-input-placeholder {
+   color:#adebeb ;
+	font-family: 'Roboto';
+	font-weight:100;
+}
+
+:-moz-placeholder {
+   color: #adebeb;  
+	font-family: 'Roboto';
+	font-weight:100;
+}
+
+::-moz-placeholder {
+   color: #adebeb;  
+	font-family: 'Roboto';
+	font-weight:100;
+}
+
+:-ms-input-placeholder {  
+   color: #adebeb; 
+	font-family: 'Roboto';
+	font-weight:100;
+}
+  .button {
+	
+	width: 95%;
+	height: 60px;
+	bottom: 0;
+	border: 0;
+	font-family: 'Dosis';
+	font-size: 24px;
+	text-transform: uppercase;
+	cursor: pointer;
+        text-align: center;
+        color:white;
+        background-color: #2db9b9;  
+	font-family: cooper;
+	
+}
+            </style>
+    </head>
+    
+            <body class="bg">
+      
+                <div class="container">
+            
+        <form action="create_stud" method="POST">
+          
+          <h2 style="color:#006699 ;font-family: Lucida Calligraphy;">Enter New Student<h2>
+          <br><br>
+              <input type="text"      name="sname"     placeholder = "Name" required ><br>
+              <input type="text"      name="regno."    placeholder = "Register no." required><br>
+              <input type="email"     name="mail"      placeholder = "E-mail" required><br>
+              <input type="password"  name="pass"      placeholder = "Password" required><br>
+              <input type="text"      name="science"    placeholder = "Prev Science Marks" required><br>
+              <input type="text"      name="math"      placeholder = "Prev Maths Marks" required><br>
+              <input type="text"      name="com"       placeholder = "Prev Computer Marks" required ><br>
+              <input type="text"      name="gk"        placeholder = "Prev GK Marks" required><br><br><br>
+              <button type="submit"    name = "created" class="button"  >submit<br><br><br>
+           
+            </form>
+                    </div>
+           
+    </body>
+   
+</html>
