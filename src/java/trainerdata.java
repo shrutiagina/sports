@@ -52,15 +52,15 @@ public class trainerdata extends HttpServlet {
               
                 out.println("<table border=1 width=60% height=80% align=center>"
                         + "<tr>"
-                        + "<th>NAME </th>"
+                       
+                          + "<th>NAME </th>"
                         + "<th>AGE</th>"
                         +"<th>GENDER</th>"
                         +"<th>SPORTS</th>"
                         +"<th>YEARS OF EXPERIENCE</th>"
                         +"<th>EMAIL</th>"
-                        
+                        +"<th>PASSWORD</th>"
                         +"<th>CONTACT NO.</th>"
-                        
                         +"<th>ADDRESS</th>"
                         + "</tr>");
               
@@ -72,16 +72,21 @@ public class trainerdata extends HttpServlet {
                     String sports = rs.getString("SPORTS");
                     int yoe = rs.getInt("YEARS_OF_EXPERIENCE");
                     String mail = rs.getString("EMAIL");
-                    int cont = rs.getInt("CONTACT");
-                   
-                    String address = rs.getString("ADDRESS");
+                    
+                    
+                    
+                    
+                    String pass = rs.getString("SR_PASSWORD");
+                   int cont = rs.getInt("CONTACT");
+                   String address = rs.getString("ADDRESS");
+                    //String address = request.getParameter("ADDRESS");
                     
                     //int age = Integer.parseInt(ag);
                     //int years = Integer.parseInt(yoe);
                     //int contact = Integer.parseInt(cont);
                     
                     
-                    out.println("<tr align=center >"+ "<td >" +name+"<td width ='20%' >"+ag+"<td > "+gender+"<td > "+ sports+" <td > "+yoe+" <td> "+mail+"<td> "+cont+" <td> "+address+" </tr>");
+                    out.println("<tr align=center >"+ "<td >" +name+"<td width ='20%' >"+ag+"<td > "+gender+"<td > "+ sports+" <td > "+yoe+" <td> "+mail+" <td> "+pass+"<td> "+cont+"<td> "+address+" </tr>");
                    
                     out.println("<br>");
                    

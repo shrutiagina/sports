@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.sql.*;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -11,12 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
  *
  * @author KHSCI5MCA16059
  */
-public class registerservlet extends HttpServlet {
+public class adminlog extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,71 +31,25 @@ public class registerservlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-          
-           
-           
-           String name = request.getParameter("name");
-          String ag = request.getParameter("age");
-           int age = Integer.parseInt(ag);
-           String gender = request.getParameter("gender");
-           String usercategory = request.getParameter("usercategory");
-      
-           String mail = request.getParameter("mail");
-          
-           double contact = Double.valueOf( request.getParameter("contact"));
-           String address = request.getParameter("address");
-           String pass = request.getParameter("pass");
-          
-          
-           
-          
+            String mail = request.getParameter("email");
+            String id = request.getParameter("id");
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet registerservlet</title>");            
+            out.println("<title>Servlet adminlog</title>");            
             out.println("</head>");
             out.println("<body>");
- 
-           
-         
-            
-            
-              try
-              {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sports","root","");
-                 PreparedStatement ps = con.prepareStatement("insert into user_register values(?,?,?,?,?,?,?,?)");
-                 ps.setString(1, usercategory);
-                 ps.setString(2, name);
-                 ps.setInt(3, age);
-                 ps.setString(4, gender);
-                 ps.setString(5, mail);
-                 ps.setDouble(6, contact);
-                 ps.setString(7, address);
-                 ps.setString(8, pass);
-                 
-                 ps.executeUpdate();
-                    
-               
-               
-               
-              
-               
-                  con.close();
-               
-                 
+            if(mail.equals("admin123@gmail.com") && id.equals("admin01"))
+            {
+                request.getRequestDispatcher("admin.html").forward(request, response);
+            }
+            else
+            {
+                out.println("<script>alert('no valid');window.location.assign('logadmin.html')");
             }
             
-            
-        
-              catch(Exception e)
-              {
-                  out.println("Exception : "+e);
-              }
-            out.println("hello");
-        
-          
+            out.println("<h1>Servlet adminlog at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -49,7 +49,7 @@ public class userServlet extends HttpServlet {
                  
                  if(name.equalsIgnoreCase("learner"))
                  {
-                PreparedStatement ps =con.prepareStatement("select * from learners");
+                PreparedStatement ps =con.prepareStatement("select * from users");
                 ResultSet rs = ps.executeQuery();
                while(rs.next())
                {
@@ -76,7 +76,7 @@ public class userServlet extends HttpServlet {
                }}
               else if(name.equalsIgnoreCase("trainer"))
                {
-                   PreparedStatement ps1 =con.prepareStatement("select * from trainers");
+                   PreparedStatement ps1 =con.prepareStatement("select * from users");
                    ResultSet rs = ps1.executeQuery();
                    while(rs.next())
                    {
@@ -96,6 +96,29 @@ public class userServlet extends HttpServlet {
                    }
                
                }
+              else if(name.equalsIgnoreCase("association"))
+               {
+                   PreparedStatement ps2 =con.prepareStatement("select  from learners where USER_CATEGORY = 'Association'");
+                   ResultSet rs = ps2.executeQuery();
+                   while(rs.next())
+                   {
+                       if(email.equals(rs.getString(6)) && password.equals(rs.getString(7)))
+                       {
+                           MyGlobals.mail = email;
+                           request.getRequestDispatcher("association1").forward(request, response);
+                       }
+                       else
+                       {
+                         out.println("<script type=\"text/javascript\">\n" +
+"                     alert(\"Kindly enter valid mail id or password!  \");\n" +
+"                     window.location.assign(\"loginpage.html\")\n" +
+"                    </script>\n");
+                       
+                       }
+                   }
+               
+               }
+             
                 
               else
               {

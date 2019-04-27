@@ -27,7 +27,7 @@
             int cont = Integer.parseInt(contact);
             String address = request.getParameter("address");
             String pass = request.getParameter("pass");
-
+            String type = request.getParameter("type");
 
             session.setAttribute("name",name);
             session.setAttribute("age", age);
@@ -38,7 +38,7 @@
             session.setAttribute("cont", cont);
             session.setAttribute("address", address);
             session.setAttribute("pass",pass);
-                
+            session.setAttribute("type",type);    
            
         %>
         

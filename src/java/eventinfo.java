@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author KHSCI5MCA16059
  */
-public class AssociationDetails extends HttpServlet {
+public class eventinfo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,80 +34,54 @@ public class AssociationDetails extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AssociationDetails</title>");            
+            out.println("<title>Servlet eventinfo</title>");            
             out.println("</head>");
-            out.println("<body style= 'background-color:#CEF6F5;' >");
-            
-                try
-           {
+            out.println("<body style= 'background-color:#CEF6F5;'>");
+            try
+            {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/Sports","root","");
-                PreparedStatement ps = con.prepareStatement("select * from user_register  inner join user_register2 on user_register.email=user_register2.email where user_category = 'Association' ");
-               
-                   out.println("<center>");
-                 out.println("<h2>ASSOCIATION DETAILS </h2>");
-               
-                out.println("</center>"); 
-              
-                out.println("<table border=1  align=center>"
-                        + "<tr>"
-                        + "<th>NAME </th>"
-                        
-                       
-                        +"<th>SPORTS</th>"
+                PreparedStatement ps = con.prepareStatement("select * from user_register2 ");
+                ResultSet rs = ps.executeQuery();
+                out.println("<center>");
+                out.println("<h1>EVENTS INFORMATION</h1>");
+                out.println("</center>");
+                out.println("<br>");
+                   out.println("<table border=1  align=center>"
+                        +"<tr>"
+                      
                         +"<th>EMAIL</th>"
-                        +"<th>CONTACT NO.</th>"
-                       
-                        +"<th>ADDRESS</th>"
-                        +"<th>NEED TRAINER?.</th>"
+                        +"<th>SPORTS</th>"
+                      
                         +"<th>DATE</th>"
                         +"<th>TIME</th>"
                         + "</tr>");
                 
-                  ResultSet rs = ps.executeQuery();
-                 
-                  while(rs.next())
+                while(rs.next())
                 {
-                    String name = rs.getString("NAME");
-                   
                     
-                 
-                   String sports = rs.getString("SPORTS");
-                   
-                    String mail = rs.getString("EMAIL");
-                    int cont = rs.getInt("CONTACT");
                   
-                    String address = rs.getString("ADDRESS");
-                    String need = rs.getString("NEED_TRAINER");
-                   String Date = rs.getString("DATE");
-                   String Time = rs.getString("TIME");
-                    //int age = Integer.parseInt(ag);
-                    //int years = Integer.parseInt(yoe);
-                    //int contact = Integer.parseInt(cont);
-                    
-                    
-                    out.println("<tr align=center >"+ "<td >" +name+"<td width ='20%' >"+sports+"<td>"+mail+"<td >  "+cont+"  <td> "+address+"<td> "+need+" <td> "+Date+" <td> "+Time+" </tr>");
-                   
-                
-                   
-                    
+                    String sport = rs.getString(3);
+                    String mail = rs.getString(1);
+                    String date = rs.getString(4);
+                    String time = rs.getString(5);
+                  
+                      
+                   out.println("<tr align=center >"+"<td>"+mail+"<td>"+sport+"<td >  "+date+" <td> "+time+" </tr>");
                 }
-                
-                 out.println("</table>");
-               
-               
-                con.close();
-                
-                
-           }
-           catch(Exception e)
-           {
-               out.println("Exception : "+e);
-           }
+                out.println("</table>");
+             con.close();
+            }
+            catch(Exception e)
+            {
+                out.println("Exception : "+e);
+            }
             
             
             
-          
+            
+            
+           
             out.println("</body>");
             out.println("</html>");
         }

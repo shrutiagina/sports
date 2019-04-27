@@ -11,12 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
  *
  * @author KHSCI5MCA16059
  */
-public class registerservlet extends HttpServlet {
+public class RegisterSer extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,71 +31,55 @@ public class registerservlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-          
-           
-           
-           String name = request.getParameter("name");
-          String ag = request.getParameter("age");
-           int age = Integer.parseInt(ag);
-           String gender = request.getParameter("gender");
-           String usercategory = request.getParameter("usercategory");
-      
-           String mail = request.getParameter("mail");
-          
-           double contact = Double.valueOf( request.getParameter("contact"));
-           String address = request.getParameter("address");
-           String pass = request.getParameter("pass");
-          
-          
-           
-          
+            String user = request.getParameter("usercategory");
+            String name = request.getParameter("name");
+            String age = request.getParameter("age");
+            int ag = Integer.parseInt(age);
+            String gender = request.getParameter("gender");
+            String email = request.getParameter("mail");
+           String contact = request.getParameter("contact");
+            int cont =Integer.parseInt(contact);
+            String address = request.getParameter("address");
+            String pass = request.getParameter("pass");
+            out.println("hello");
+            
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet registerservlet</title>");            
+            out.println("<title>Servlet RegisterSer</title>");            
             out.println("</head>");
             out.println("<body>");
- 
-           
-         
             
-            
-              try
-              {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sports","root","");
-                 PreparedStatement ps = con.prepareStatement("insert into user_register values(?,?,?,?,?,?,?,?)");
-                 ps.setString(1, usercategory);
-                 ps.setString(2, name);
-                 ps.setInt(3, age);
-                 ps.setString(4, gender);
-                 ps.setString(5, mail);
-                 ps.setDouble(6, contact);
-                 ps.setString(7, address);
-                 ps.setString(8, pass);
-                 
-                 ps.executeUpdate();
+            out.println("hi");
+          /*  try
+            {
+                    Class.forName("com.mysql.jdbc.Driver");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sports","root","");
+                    out.println("hello");
+                    PreparedStatement ps = con.prepareStatement("insert into user_register values(?,?,?,?,?,?,?,?)");
+                    out.println("hello");
+                    ps.setString(1, user);
+                    ps.setString(2, name);
+                    ps.setInt(3, ag);
+                    ps.setString(4, gender);
+                    ps.setString(5, email);
+                    ps.setInt(6, cont);
+                    ps.setString(7, address);
+                    ps.setString(8, pass);
+                   ps.executeUpdate(); 
+             con.close();
                     
-               
-               
-               
-              
-               
-                  con.close();
-               
-                 
             }
+            catch(Exception e)
+            {
+                out.println("Exception e"+e);
+            }*/
             
             
-        
-              catch(Exception e)
-              {
-                  out.println("Exception : "+e);
-              }
-            out.println("hello");
-        
-          
+            
+            
+            out.println("<h1>Servlet RegisterSer at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

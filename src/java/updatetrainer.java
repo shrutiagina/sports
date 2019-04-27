@@ -79,7 +79,7 @@ public class updatetrainer extends HttpServlet {
                ps.setString(7, address);
                ps.setString(8,mail);
                ps.executeUpdate();
-               out.println("<html><body><script>alert('Trainer Updated');window.location.assign('updatetrainer.html');</script></body></html>");
+               out.println("<html><body><script>alert('Trainer Updated');window.location.assign('details.html');</script></body></html>");
                con.close();
                 
             }

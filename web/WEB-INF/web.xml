@@ -136,6 +136,42 @@
         <servlet-name>trainerlogin</servlet-name>
         <servlet-class>trainerlogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>eventinfo</servlet-name>
+        <servlet-class>eventinfo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>association1</servlet-name>
+        <servlet-class>association1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <servlet-class>UserLoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updatelog</servlet-name>
+        <servlet-class>updatelog</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterSer</servlet-name>
+        <servlet-class>RegisterSer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterLearner</servlet-name>
+        <servlet-class>RegisterLearner</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>register2</servlet-name>
+        <servlet-class>register2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>adminlog</servlet-name>
+        <servlet-class>adminlog</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerservlet</servlet-name>
         <url-pattern>/registerservlet</url-pattern>
@@ -271,6 +307,42 @@
     <servlet-mapping>
         <servlet-name>trainerlogin</servlet-name>
         <url-pattern>/trainerlogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eventinfo</servlet-name>
+        <url-pattern>/eventinfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>association1</servlet-name>
+        <url-pattern>/association1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <url-pattern>/UserLoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updatelog</servlet-name>
+        <url-pattern>/updatelog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterSer</servlet-name>
+        <url-pattern>/RegisterSer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterLearner</servlet-name>
+        <url-pattern>/RegisterLearner</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>register2</servlet-name>
+        <url-pattern>/register2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminlog</servlet-name>
+        <url-pattern>/adminlog</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

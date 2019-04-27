@@ -47,9 +47,9 @@ public class RemoveServlet extends HttpServlet {
                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sports","root","");
                if(learner!=null)
                {
-                     PreparedStatement ps = con.prepareStatement("delete  from learners where EMAIL=?");
+                     PreparedStatement ps = con.prepareStatement("delete  from user_register2 where EMAIL=?");
                      ps.setString(1, mail);
-                     out.println("deleted");
+                     //out.println("<html><body><script>alert('Deleted');window.location.assign('remove.html');</script></body></html>");
                       ps.executeUpdate();
                }
               
@@ -59,7 +59,7 @@ public class RemoveServlet extends HttpServlet {
                    ps1.setString(1,mail);
                    ps1.executeUpdate();
                }
-                  out.println("<html><body><script>alert('Trainer Updated');window.location.assign('remove.html');</script></body></html>");
+                  out.println("<html><body><script>alert('Deleted');window.location.assign('details.html');</script></body></html>");
                con.close();
            }
             catch(Exception e)

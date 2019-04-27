@@ -33,7 +33,7 @@ public class trainerlogin extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession();
-            String mail = (String)session.getAttribute("email");
+            String mail = request.getParameter("email");
             String name = "";
             int yoe = 0;
             int contact = 0;
@@ -53,7 +53,7 @@ public class trainerlogin extends HttpServlet {
                 
                 
                 PreparedStatement ps = con.prepareStatement("select NAME ,SPORTS ,YEARS_OF_EXPERIENCE,CONTACT,ADDRESS from trainers where EMAIL =? ");
-             mail = MyGlobals.mail ;
+           
                 ps.setString(1,mail);
               
                

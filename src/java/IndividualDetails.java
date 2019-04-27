@@ -36,16 +36,16 @@ public class IndividualDetails extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet IndividualDetails</title>");            
             out.println("</head>");
-            out.println("<body>");
+            out.println("<body style= 'background-color:#CEF6F5;'>");
             
               try
            {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/Sports","root","");
-                PreparedStatement ps = con.prepareStatement("select * from learners where  USER_CATEGORY = 'Individual'");
+                PreparedStatement ps = con.prepareStatement("select * from user_register  inner join user_register2 on user_register.email=user_register2.email where user_category = 'Individual' ");
                
                    out.println("<center>");
-                 out.println("<h2>STUDENT DETAILS </h2>");
+                 out.println("<h2>INDIVIDUAL DETAILS </h2>");
                
                 out.println("</center>"); 
               
@@ -54,7 +54,7 @@ public class IndividualDetails extends HttpServlet {
                         + "<th>NAME </th>"
                         + "<th>AGE</th>"
                         +"<th>GENDER</th>"
-                        +"<th>USER_CATEGORY</th>"
+                       
                         +"<th>SPORTS</th>"
                         +"<th>EMAIL</th>"
                         +"<th>CONTACT NO.</th>"

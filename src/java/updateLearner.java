@@ -59,7 +59,7 @@ public class updateLearner extends HttpServlet {
              
              Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sports","root","");
               
-              PreparedStatement ps = con.prepareStatement("Update learners set NAME=?,AGE=?,GENDER=?,SPORTS=?,CONTACT=?,ADDRESS=? where EMAIL=?");
+              PreparedStatement ps = con.prepareStatement("Update user_register set NAME=?,AGE=?,GENDER=?,SPORTS=?,CONTACT=?,ADDRESS=? where EMAIL=?");
              
               ps.setString(1, name);
               ps.setString(2,ag);

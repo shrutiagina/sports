@@ -12,4 +12,7 @@ public class MyGlobals {
     public static String mail = "";
     public static String date = "";
     public static String hour = "";
+    public static String type = "";
+    public static String user = "";
+    public static String sports = "";
 }

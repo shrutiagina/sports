@@ -56,6 +56,9 @@ public class TrainerRegister extends HttpServlet {
             
             String address = request.getParameter("address");
             
+           
+            
+          
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -70,19 +73,21 @@ public class TrainerRegister extends HttpServlet {
                 PreparedStatement ps1   =  con.prepareStatement("insert into trainers values(?,?,?,?,?,?,?,?,?)");
                 
                 
-                ps1.setString(1,name);
-                ps1.setInt(2,agee);
-                ps1.setString(3,gender);
-                ps1.setString(4,sports);
-                ps1.setInt(5,year);
-                ps1.setString(6,mail);
-                ps1.setString(7,pass);
-                ps1.setInt(8,contct);
-                
-                ps1.setString(9,address);
-                
-                ps1.executeUpdate();
-                out.println("<html><body><script>alert('ThankYou..You are registered with the club');window.location.assign('admin.html');</script></body></html>");
+               
+                         ps1.setString(1,name);
+                         ps1.setInt(2,agee);
+                         ps1.setString(3,gender);
+                        
+                         ps1.setString(4,sports);
+                         ps1.setInt (5,year);
+                         ps1.setString(6,mail);
+                          ps1.setString(7,pass);
+                         ps1.setInt(8,contct);
+                         ps1.setString(9,address);
+                        
+                         
+                         ps1.executeUpdate();
+                out.println("<html><body><script>alert('ThankYou..You are registered with the club');window.location.assign('details.html');</script></body></html>");
                 con.close();
               }
               catch(Exception e)

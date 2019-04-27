@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -46,375 +47,72 @@ public class association extends HttpServlet {
             out.println("</head>");
             out.println("<body style='background-color:#CEF6F5'>");
             
+          
+           HttpSession session = request.getSession();
+           String mail = (String)session.getAttribute("email");
+         String name = "";
+         String date ="";
+         String sports ="";
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet login</title>");            
+            out.println("</head>");
+            out.println("<body background='usersev.jpg'> ");
+            out.println("<br><h1 style='font-family:Mongolian Baiti;color:#088A85;'>WELCOME  TO  SR CLUB </h1>");
             try
             {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sports","root","");
-               if(cricket!=null)
-               {
-                 PreparedStatement ps = con.prepareStatement("select * from cricket where USER_CATEGORY='Association'");
-                ResultSet rs = ps.executeQuery();
-                out.println("<center>");
-                out.println("<h1>STUDENT DETAILS <h1>");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/Sports","root","");
                
-                out.println("</center>"); 
-              
-                out.println("<table border=1 width=60% height=80% align=center>"
-                        + "<tr>"
-                        + "<th>NAME </th>"
-                        + "<th>AGE</th>"
-                        +"<th>GENDER</th>"
-                        
-                        
-                        +"<th>EMAIL</th>"
-                        +"<th>CONTACT NO.</th>"
-                       
-                        +"<th>ADDRESS</th>"
-                        +"<th>NEED TRAINER?.</th>"
-                        +"<th>DATE</th>"
-                        +"<th>TIME</th>"
-                        + "</tr>");
-              
-                while(rs.next())
-                {
-                    String name = rs.getString("NAME");
-                    int ag = rs.getInt("AGE");
-                    String gender = rs.getString("GENDER");
-                    
-                   
-                    String mail = rs.getString("EMAIL");
-                    int cont = rs.getInt("CONTACT");
-                  
-                    String address = rs.getString("ADDRESS");
-                    String need = rs.getString("NEED_TRAINER");
-                   String Date = rs.getString("DATE");
-                   String Time = rs.getString("TIME");
-                    //int age = Integer.parseInt(ag);
-                    //int years = Integer.parseInt(yoe);
-                    //int contact = Integer.parseInt(cont);
-                    
-                    
-                    out.println("<tr align=center >"+ "<td >" +name+"<td width ='20%' >"+ag+"<td > "+gender+"<td > "+mail+"<td >  "+cont+"  <td> "+address+"<td> "+need+" <td> "+Date+" <td> "+Time+" </tr>");
-                   
-                    out.println("<br>");
-                   
-                    out.println("<br>");
-                    
-                }
-                 out.println("</table>");
-               
-               }
-                
-               
-               
-               
-            
-                 /*football*/
-                 
-                 
-                    if(football!=null)
-               {
-                 PreparedStatement ps = con.prepareStatement("select * from football where USER_CATEGORY='Association'");
-                ResultSet rs = ps.executeQuery();
-                out.println("<center>");
-                out.println("<h1>STUDENT DETAILS <h1>");
-               
-                out.println("</center>"); 
-              
-                out.println("<table border=1 width=60% height=80% align=center>"
-                        + "<tr>"
-                        + "<th>NAME </th>"
-                        + "<th>AGE</th>"
-                        +"<th>GENDER</th>"
-                        
-                        
-                        +"<th>EMAIL</th>"
-                        +"<th>CONTACT NO.</th>"
-                       
-                        +"<th>ADDRESS</th>"
-                        +"<th>NEED TRAINER?.</th>"
-                        +"<th>DATE</th>"
-                        +"<th>TIME</th>"
-                        + "</tr>");
-              
-                while(rs.next())
-                {
-                    String name = rs.getString("NAME");
-                    int ag = rs.getInt("AGE");
-                    String gender = rs.getString("GENDER");
-                    
-                   
-                    String mail = rs.getString("EMAIL");
-                    int cont = rs.getInt("CONTACT");
-                  
-                    String address = rs.getString("ADDRESS");
-                    String need = rs.getString("NEED_TRAINER");
-                   String Date = rs.getString("DATE");
-                   String Time = rs.getString("TIME");
-                    //int age = Integer.parseInt(ag);
-                    //int years = Integer.parseInt(yoe);
-                    //int contact = Integer.parseInt(cont);
-                    
-                    
-                    out.println("<tr align=center >"+ "<td >" +name+"<td width ='20%' >"+ag+"<td > "+gender+"<td > "+mail+"<td >  "+cont+"  <td> "+address+"<td> "+need+" <td> "+Date+" <td> "+Time+" </tr>");
-                   
-                    out.println("<br>");
-                   
-                    out.println("<br>");
-                    
-                }
-                 out.println("</table>");
-               
-               }
-                    
-                    
-                    /*basketball*/
-                    
-                    
-                       if(basketball!=null)
-               {
-                 PreparedStatement ps = con.prepareStatement("select * from basketball where USER_CATEGORY='Association'");
-                ResultSet rs = ps.executeQuery();
-                out.println("<center>");
-                out.println("<h1>STUDENT DETAILS <h1>");
-               
-                out.println("</center>"); 
-              
-                out.println("<table border=1 width=60% height=80% align=center>"
-                        + "<tr>"
-                        + "<th>NAME </th>"
-                        + "<th>AGE</th>"
-                        +"<th>GENDER</th>"
-                        
-                        
-                        +"<th>EMAIL</th>"
-                        +"<th>CONTACT NO.</th>"
-                       
-                        +"<th>ADDRESS</th>"
-                        +"<th>NEED TRAINER?.</th>"
-                        +"<th>DATE</th>"
-                        +"<th>TIME</th>"
-                        + "</tr>");
-              
-                while(rs.next())
-                {
-                    String name = rs.getString("NAME");
-                    int ag = rs.getInt("AGE");
-                    String gender = rs.getString("GENDER");
-                    
-                   
-                    String mail = rs.getString("EMAIL");
-                    int cont = rs.getInt("CONTACT");
-                  
-                    String address = rs.getString("ADDRESS");
-                    String need = rs.getString("NEED_TRAINER");
-                   String Date = rs.getString("DATE");
-                   String Time = rs.getString("TIME");
-                    //int age = Integer.parseInt(ag);
-                    //int years = Integer.parseInt(yoe);
-                    //int contact = Integer.parseInt(cont);
-                    
-                    
-                    out.println("<tr align=center >"+ "<td >" +name+"<td width ='20%' >"+ag+"<td > "+gender+"<td > "+mail+"<td >  "+cont+"  <td> "+address+"<td> "+need+" <td> "+Date+" <td> "+Time+" </tr>");
-                   
-                    out.println("<br>");
-                   
-                    out.println("<br>");
-                    
-                }
-                 out.println("</table>");
-               
-               }
                 
                 
-                       
-                       /*volleyball*/
-                       
-                       
-                       
-                          if(volleyball!=null)
-               {
-                 PreparedStatement ps = con.prepareStatement("select * from volleyball where USER_CATEGORY='Association'");
-                ResultSet rs = ps.executeQuery();
-                out.println("<center>");
-                out.println("<h1>STUDENT DETAILS <h1>");
-               
-                out.println("</center>"); 
+                PreparedStatement ps = con.prepareStatement("select NAME ,DATE ,TIME,SPORTS from learners where EMAIL =? ");
+             mail = MyGlobals.mail ;
+                ps.setString(1,mail);
               
-                out.println("<table border=1 width=60% height=80% align=center>"
-                        + "<tr>"
-                        + "<th>NAME </th>"
-                        + "<th>AGE</th>"
-                        +"<th>GENDER</th>"
-                        
-                        
-                        +"<th>EMAIL</th>"
-                        +"<th>CONTACT NO.</th>"
-                       
-                        +"<th>ADDRESS</th>"
-                        +"<th>NEED TRAINER?.</th>"
-                        +"<th>DATE</th>"
-                        +"<th>TIME</th>"
-                        + "</tr>");
-              
-                while(rs.next())
-                {
-                    String name = rs.getString("NAME");
-                    int ag = rs.getInt("AGE");
-                    String gender = rs.getString("GENDER");
-                    
-                   
-                    String mail = rs.getString("EMAIL");
-                    int cont = rs.getInt("CONTACT");
-                  
-                    String address = rs.getString("ADDRESS");
-                    String need = rs.getString("NEED_TRAINER");
-                   String Date = rs.getString("DATE");
-                   String Time = rs.getString("TIME");
-                    //int age = Integer.parseInt(ag);
-                    //int years = Integer.parseInt(yoe);
-                    //int contact = Integer.parseInt(cont);
-                    
-                    
-                    out.println("<tr align=center >"+ "<td >" +name+"<td width ='20%' >"+ag+"<td > "+gender+"<td > "+mail+"<td >  "+cont+"  <td> "+address+"<td> "+need+" <td> "+Date+" <td> "+Time+" </tr>");
-                   
-                    out.println("<br>");
-                   
-                    out.println("<br>");
-                    
-                }
-                 out.println("</table>");
-               
-               }
                 
-                          
-                          /*swimming*/
-                          
-                          
-                             if(swimming!=null)
-               {
-                 PreparedStatement ps = con.prepareStatement("select * from swimming where USER_CATEGORY='Association'");
-                ResultSet rs = ps.executeQuery();
-                out.println("<center>");
-                out.println("<h1>STUDENT DETAILS <h1>");
+               mail = MyGlobals.mail ;
+                  out.println("<h3 style='padding-left:75%'><br><br><br><br><br><br>EMAIL-ID :<br><u> "+mail+"</u></h3>");
+                out.println("<br>");
+                 out.println("<br>");
+                  out.println("<br>");
+               ResultSet rs = ps.executeQuery();
+          while(rs.next()){
+               name = rs.getString("NAME");
+               date = rs.getString("date");
+               //String age = rs.getString("AGE");
+               String time = rs.getString("time");
+                sports = rs.getString("SPORTS");
+               out.println("<div style=margin-left:70px;margin-right:200px>");
+
+              out.println("<br>");
+               out.println("<table border='1' width='40%' height='40%' cellspacing='30px' cellpadding='5px'>");
+                 out.println("<tr align=center >"+ "<td >NAME <td >" +name+ "</tr>"
+                         +"<tr align = 'center'>"+"<td width ='20%' >SPORTS<td>"+sports+"</tr>"+"<tr align='center'>"+"<td >DATE<td> "+date+"</tr>"+"<tr align='center'>"+"<td >TIME<td> "+time+"  </tr>");
                
-                out.println("</center>"); 
-              
-                out.println("<table border=1 width=60% height=80% align=center>"
-                        + "<tr>"
-                        + "<th>NAME </th>"
-                        + "<th>AGE</th>"
-                        +"<th>GENDER</th>"
-                        
-                        
-                        +"<th>EMAIL</th>"
-                        +"<th>CONTACT NO.</th>"
-                       
-                        +"<th>ADDRESS</th>"
-                        +"<th>NEED TRAINER?.</th>"
-                        +"<th>DATE</th>"
-                        +"<th>TIME</th>"
-                        + "</tr>");
-              
-                while(rs.next())
-                {
-                    String name = rs.getString("NAME");
-                    int ag = rs.getInt("AGE");
-                    String gender = rs.getString("GENDER");
-                    
-                   
-                    String mail = rs.getString("EMAIL");
-                    int cont = rs.getInt("CONTACT");
-                  
-                    String address = rs.getString("ADDRESS");
-                    String need = rs.getString("NEED_TRAINER");
-                   String Date = rs.getString("DATE");
-                   String Time = rs.getString("TIME");
-                    //int age = Integer.parseInt(ag);
-                    //int years = Integer.parseInt(yoe);
-                    //int contact = Integer.parseInt(cont);
-                    
-                    
-                    out.println("<tr align=center >"+ "<td >" +name+"<td width ='20%' >"+ag+"<td > "+gender+"<td > "+mail+"<td >  "+cont+"  <td> "+address+"<td> "+need+" <td> "+Date+" <td> "+Time+" </tr>");
-                   
-                    out.println("<br>");
-                   
-                    out.println("<br>");
-                    
-                }
-                 out.println("</table>");
+               out.println("</table>");
                
-               }
-                
-                 
-                             /*badminton*/
-                             
-                             
-                             
-                                if(badminton!=null)
-               {
-                 PreparedStatement ps = con.prepareStatement("select * from badminton where USER_CATEGORY='Association'");
-                ResultSet rs = ps.executeQuery();
-                out.println("<center>");
-                out.println("<h1>STUDENT DETAILS <h1>");
+               out.println("<br><br>");
+                   out.println("<html><body><form method='POST' action = 'complaint'>"+"Complaints  : <br><br> "+"<textarea name = 'complaint' rows = '9' cols = '80'></textarea>"+"<br><br>"+"<input type = 'submit' value='Register'>"+"</form></body></html>");
+         
+                   out.println("<br>");
+                   out.println("<button type='submit' name ='pandaram' >change</button>");
+               out.println("</div>");
                
-                out.println("</center>"); 
               
-                out.println("<table border=1 width=60% height=80% align=center>"
-                        + "<tr>"
-                        + "<th>NAME </th>"
-                        + "<th>AGE</th>"
-                        +"<th>GENDER</th>"
-                        
-                        
-                        +"<th>EMAIL</th>"
-                        +"<th>CONTACT NO.</th>"
-                       
-                        +"<th>ADDRESS</th>"
-                        +"<th>NEED TRAINER?.</th>"
-                        +"<th>DATE</th>"
-                        +"<th>TIME</th>"
-                        + "</tr>");
-              
-                while(rs.next())
-                {
-                    String name = rs.getString("NAME");
-                    int ag = rs.getInt("AGE");
-                    String gender = rs.getString("GENDER");
-                    
-                   
-                    String mail = rs.getString("EMAIL");
-                    int cont = rs.getInt("CONTACT");
-                  
-                    String address = rs.getString("ADDRESS");
-                    String need = rs.getString("NEED_TRAINER");
-                   String Date = rs.getString("DATE");
-                   String Time = rs.getString("TIME");
-                    //int age = Integer.parseInt(ag);
-                    //int years = Integer.parseInt(yoe);
-                    //int contact = Integer.parseInt(cont);
-                    
-                    
-                    out.println("<tr align=center >"+ "<td >" +name+"<td width ='20%' >"+ag+"<td > "+gender+"<td > "+mail+"<td >  "+cont+"  <td> "+address+"<td> "+need+" <td> "+Date+" <td> "+Time+" </tr>");
-                   
-                    out.println("<br>");
-                   
-                    out.println("<br>");
-                    
-                }
-                 out.println("</table>");
                
-               }
-                
-                con.close();
-                
+               
+          }
+          
+      
             }
             catch(Exception e)
             {
                 out.println("Exception : "+e);
             }
-            out.println("</body>");
-            out.println("</html>");
+            
+         
             
             
             
